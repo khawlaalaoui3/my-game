@@ -1,0 +1,66 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+canvas {
+  display: block;
+}
+
+/* Style pour le champ de texte avec effet glassmorphism spatial */
+#gameUI {
+  animation: floatUI 3s ease-in-out infinite;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+#textInput {
+  transition: all 0.3s ease;
+  font-family: 'Space Mono', monospace !important;
+}
+
+#textInput:focus {
+  border-color: rgba(255, 20, 147, 0.9) !important;
+  box-shadow: 0 0 30px rgba(255, 20, 147, 0.7), 
+              0 0 50px rgba(255, 105, 180, 0.5),
+              inset 0 0 20px rgba(255, 20, 147, 0.3) !important;
+  color: #FFB4E1 !important;
+  transform: scale(1.02);
+}
+
+#textInput::placeholder {
+  color: rgba(135, 206, 235, 0.5);
+  font-style: italic;
+}
+
+/* Style pour la checkbox */
+#enemiesToggle {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#enemiesToggle:hover {
+  transform: scale(1.1);
+}
+
+/* Animation de flottement pour l'UI */
+@keyframes floatUI {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0px);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+}
+
+/* Style pour les labels */
+label {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+label:hover {
+  text-shadow: 0 0 15px currentColor !important;
+  transform: scale(1.05);
+}
